@@ -1,0 +1,22 @@
+.cardone {
+  max-width: 640px;
+}
+.imgeinat {
+  width: 350px;
+  height: 350px;
+}
+
+.fontca {
+  max-width: 500px;
+  margin: auto;
+}
+.cardsize {
+  max-width: 1200px;
+}
+.cardfw{
+display: flex;
+justify-content: center;
+}
+.cardh{
+  height: 230px;
+}
