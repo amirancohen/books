@@ -1,25 +1,26 @@
+import { useEffect } from "react";
+import { useUserData } from "../context/user";
+import { getUserData } from "../services/ApiService";
 import About from "../components/About";
-import Bookswork from "../components/Bookswork";
-import Contactus from "../components/Contactus";
-import Title from "../components/Title";
-import ViewContactus from "../components/Viewcontact";
-import printer from "../components/pic/printer.jpg";
-import "./hoempage.css";
+import MyServices from "../components/MyServices";
+import MyWorks from "../components/MyWorks";
+import Recommendations from "../components/Recommendations";
 
 function Homepage() {
-  
-  return (
-    <>
-      <Title mainText=" עינת זילברמן  " subText=" עורכת לשונית " />
-      <div className="text-center">
-        <img src={printer} className="img-thumbnail macin" alt="..." />
-      </div>
-      <About />
-      <Bookswork />
-      <Contactus />
-      <ViewContactus />
-    </>
-  );
+    const user = useUserData();
+    useEffect(() => {
+        getUserData().then((res) => {
+            user?.setUser(res);
+        });
+    }, []);
+    return (
+        <>
+            <About />
+            <MyServices />
+            <MyWorks />
+            <Recommendations />
+        </>
+    );
 }
 
 export default Homepage;
