@@ -6,12 +6,12 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Container,
-  Box,
+  
 } from "@mui/material";
 import { Image } from "mui-image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import printer from "./pic/printer.jpg";
+
 
 const About = () => {
   return (
@@ -20,19 +20,19 @@ const About = () => {
         עינת זילברמן
       </Typography>
       <Typography variant="subtitle1" align="center" fontSize="large">
-        עורכת לשונית
+        עורכת לשון
       </Typography>
       <Typography variant="h2" align="center">
         <Image alt="about" src="/images/printer.jpg" />
       </Typography>
-      <Grid 
+      <Grid
         container
         style={{ marginTop: 60 }}
         direction="column"
         justifyContent="center"
         alignItems="center"
       >
-        <Grid xs={10} md={8}  >
+        <Grid xs={10} md={8}>
           <Stack>
             <Typography variant="h4" align="center">
               אודות
@@ -43,8 +43,8 @@ const About = () => {
 
             <Typography variant="body1" padding={1} fontSize="large">
               שמי עינת זילברמן, עורכת לשון, ספרות ומגיהה. במשך למעלה מ-30 שנים
-              עסקתי בעריכת דין, בוגרת אוניברסיטת תל אביב במשפטים, בשנת 2022 עברתי
-              הסבה מקצועית לתחום עריכת לשון וספרות, מתוך אהבה וחיבור למילה
+              עסקתי בעריכת דין, בוגרת אוניברסיטת תל אביב במשפטים, בשנת 2022
+              עברתי הסבה מקצועית לתחום עריכת לשון וספרות, מתוך אהבה וחיבור למילה
               הכתובה. למדתי עריכת לשון ב-״מכללת אסיף״ בהצטיינות, עריכת ספרות
               ותוכן בבית העורכים של לירון פיין.
             </Typography>
@@ -64,21 +64,26 @@ const About = () => {
               <Image
                 alt="Einat Zilberman"
                 src="/images/einat.jpg"
-                style={{borderRadius:"50%", width: 150, height: 150, margin: "0 auto"}}
+                style={{
+                  borderRadius: "50%",
+                  width: 150,
+                  height: 150,
+                  margin: "0 auto",
+                }}
               />
-            </Container> 
-            <BottomNavigation  showLabels color="success">
+            </Container>
+            <BottomNavigation showLabels color="success">
               <BottomNavigationAction
-              className="fs-6"
+                className="fs-6"
                 label="WhatsApp"
-                icon={<WhatsAppIcon color="success"fontSize="large" />}
+                icon={<WhatsAppIcon color="success" fontSize="large" />}
                 rel="noopener"
                 href="https://api.whatsapp.com/send?phone=972522935212"
                 target="_blank"
               />
               <BottomNavigationAction
                 label="Mail"
-                icon={<MailOutlineIcon color="info" fontSize="large"/> }
+                icon={<MailOutlineIcon color="info" fontSize="large" />}
                 rel="noopener"
                 href="mailto:einatzilbe@gmail.com?subject=עריכה לשונית&body="
               />
