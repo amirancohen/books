@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #878e9d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +36,4 @@
     transform: rotate(360deg);
   }
 }
+iframe#webpack-dev-server-client-overlay{display:none!important}

@@ -41,7 +41,8 @@ module.exports = {
         try {
             const scheme = joi.object({
                 namebook: joi.string().required(),
-                description: joi.string().required(),
+                description: joi.string().required().min(200).max(430),
+                descriptionmore: joi.string().required(),
                 image: joi.object().required(),
             });
             const reqData = { ...req.body, ...req.files };
@@ -59,6 +60,7 @@ module.exports = {
             const newBook = new Books({
                 namebook: value.namebook,
                 description: value.description,
+                descriptionmore: value.descriptionmore,
                 image: fileName,
             });
             const result = await newBook.save();
@@ -98,7 +100,8 @@ module.exports = {
         try {
             const scheme = joi.object({
                 namebook: joi.string().required(),
-                description: joi.string().required(),
+                description: joi.string().required().min(200).max(430),
+                descriptionmore: joi.string().required(),
                 image: joi.string().optional(),
             });
 
@@ -106,8 +109,7 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).json({ error: "invalid data" });
-                return;
+                return res.status(422).json(error);
             }
 
             /* const book = await Books.findOneAndUpdate({
@@ -119,6 +121,7 @@ module.exports = {
 
             book.namebook = value.namebook;
             book.description = value.description;
+            book.descriptionmore = value.descriptionmore;
 
             await book.save();
 

@@ -1,6 +1,4 @@
 import { useContext, useState } from "react";
-import Title from "../components/Title";
-import "./register.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login } from "../services/ApiService";

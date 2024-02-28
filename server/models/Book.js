@@ -8,6 +8,11 @@ const bookSchema = new mongoose.Schema({
     description: {
         type: String,
         require: true,
+        
+    },
+    descriptionmore: {
+        type: String,
+        require: true,
     },
     image: {
         type: String,

@@ -1,13 +1,17 @@
 import { getToken } from "../auth/TokenManager";
-import { AllBooks } from "../components/Bookswork";
+import { AllBooks } from "../components/MyWorks";
+
+import { AllRecommendations } from "../components/Recommendations";
+import { AddRecomen } from "../components/addRecommendation";
 import { AddBook } from "../pages/Addpost";
 import { Editbook } from "../pages/Editpost";
+
+
 import { User } from "../types/user";
 
 const serverUrl = "http://localhost:3000";
 const usersUrl = `${serverUrl}/users`;
 const bookUrl = `${serverUrl}/books`;
-
 const recommendationUrl = `${serverUrl}/recommendations`;
 
 export const login = async (user: {
@@ -25,6 +29,15 @@ export const login = async (user: {
     return res.status === 200;
 };
 
+
+export const logout = async (): Promise<boolean> => {
+    const res = await fetch(`${usersUrl}/logout`, {
+        method: "POST",
+        credentials: "include"
+    })
+    return res.status === 200
+}
+
 export const getUserData = async (): Promise<User> => {
     const res = await fetch(`${usersUrl}/me`, {
         method: "GET",
@@ -39,9 +52,7 @@ export const getUserData = async (): Promise<User> => {
 export async function booknew(Addpost: FormData): Promise<AddBook> {
     const res = await fetch(`${bookUrl}`, {
         method: "POST",
-        headers: {
-            "x-auth-token": getToken(),
-        },
+        credentials: "include",
         body: Addpost,
     });
     return res.json();
@@ -53,32 +64,28 @@ export async function getBook(): Promise<Array<AddBook>> {
 export async function getCardById(id: string): Promise<Editbook> {
     const res = await fetch(`${bookUrl}/${id}`, {
         method: "GET",
-        headers: {
-            "x-auth-token": getToken(),
-        },
+        credentials: 'include'
     });
     return res.json();
 }
 export async function BookUpdate(
     id: string,
-    Editpost: Editbook
+    editpost: Editbook
 ): Promise<Editbook> {
     const res = await fetch(`${bookUrl}/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
-            "x-auth-token": getToken(),
         },
-        body: JSON.stringify(Editpost),
+        credentials: 'include',
+        body: JSON.stringify(editpost),
     });
     return res.json();
 }
-export async function removecard(_id: string): Promise<AllBooks> {
-    const res = await fetch(`${bookUrl}/${_id}`, {
+export async function removeBook(id: string): Promise<AllBooks> {
+    const res = await fetch(`${bookUrl}/${id}`, {
         method: "DELETE",
-        headers: {
-            "x-auth-token": getToken(),
-        },
+        credentials: "include"
     });
     return res.json();
 }
@@ -86,7 +93,7 @@ export async function removecard(_id: string): Promise<AllBooks> {
 export const postRecommendation = async (userRecommendation: {
     name: string;
     recommendation: string;
-}): Promise<any> => {
+}): Promise<AddRecomen> => {
     const res = await fetch(`${recommendationUrl}`, {
         method: "POST",
         headers: {
@@ -97,7 +104,7 @@ export const postRecommendation = async (userRecommendation: {
     return res.json();
 };
 
-export const getRecommendations = async (): Promise<Array<any>> => {
+export const getAllRecommendations = async (): Promise<Array<AllRecommendations>> => {
     const res = await fetch(`${recommendationUrl}`);
     return res.json();
 };

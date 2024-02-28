@@ -30,9 +30,9 @@ module.exports = {
 
             const param = { userId: user._id };
             const token = jwt.sign(param, config.jwt_token, {
-                expiresIn: "72800s",
+                expiresIn: "24h",
             });
-            res.cookie("token", token, { maxAge: 1000000, httpOnly: true });
+            res.cookie("token", token, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
             return res.status(200).json({ message: "success" });
         } catch (err) {
             console.log(err);
@@ -88,4 +88,8 @@ module.exports = {
             email: req.user.email,
         });
     },
+    logout: (req, res) => {
+        res.clearCookie("token")
+        return res.status(200).json({message: "success"})
+    }
 };

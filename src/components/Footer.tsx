@@ -1,28 +1,31 @@
-import "./footer.css";
-
+import * as React from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { Box } from "@mui/material";
 function Footer() {
   return (
-    <>
-      <div className="footerc">
-        <div className="d-flex flex-column mt-5">
-          <footer
-            id="sticky-footer"
-            className="flex-shrink-0 py-4  text-white-50"
-          >
-            <div className="container text-center">
-              <div>
-                <small className="text-black fs-5">
-                  Copyright &copy; עינת זילברמן
-                </small>
-              </div>
-              <small className="text-black fs-5">
-                Copyright &copy; Building Website by amiran cohen
-              </small>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </>
+    <Box
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === "light"
+            ? theme.palette.grey[200]
+            : theme.palette.grey[800],
+        p: 6,
+      }}
+      component="footer"
+    >
+      <Container maxWidth="sm">
+        <Typography variant="body2" color="text.secondary" align="center">
+          {"Copyright © "}
+          <Link color="inherit" href="https://your-website.com/">
+            עינת זילברמן
+          </Link>{" "}
+          {new Date().getFullYear()}
+          {"."}
+        </Typography>
+      </Container>
+    </Box>
   );
 }
 

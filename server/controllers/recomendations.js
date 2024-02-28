@@ -39,8 +39,8 @@ module.exports = {
     add: async function (req, res, next) {
         try {
             const scheme = joi.object({
-                fullname: joi.string().required(),
-                fulltext: joi.string().required(),
+                name: joi.string().required(),
+                recommendation: joi.string().required(),
             });
 
             const { error, value } = scheme.validate(req.body);
@@ -91,8 +91,8 @@ module.exports = {
     edit: async function (req, res, next) {
         try {
             const scheme = joi.object({
-                fullname: joi.string().required(),
-                fulltext: joi.string().required(),
+                name: joi.string().required(),
+                recommendation: joi.string().required(),
             });
 
             const { error, value } = scheme.validate(req.body);

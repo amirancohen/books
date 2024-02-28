@@ -1,26 +1,43 @@
 import { useEffect, useState } from "react";
-import Title from "../components/Title";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { BookUpdate, getCardById } from "../services/ApiService";
-import "./editpost.css";
+import {
+  Button,
+  Container,
+  Grid,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { Textarea } from "@mui/joy";
 
+const LabelRtl = {
+  ".MuiInputLabel-root": {
+    right: 0,
+  },
+  ".css-1c2i806-MuiFormLabel-root-MuiInputLabel-root": {
+    right: 0,
+    left: "unset",
+  },
+};
 export interface Editbook {
-  id?: string;
   namebook: string;
   description: string;
+  descriptionmore: string;
 }
 function Editpost() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [namebook, setNamebook] = useState("");
+  const [namebook, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [descriptionmore, setDescriptionmore] = useState("");
 
   const setCardValues = async (id: any) => {
     const cardResponse = await getCardById(id);
-    const card = cardResponse;
-    setNamebook(card.namebook);
-    setDescription(card.description);
+    setName(cardResponse.namebook);
+    setDescription(cardResponse.description);
+    setDescriptionmore(cardResponse.descriptionmore);
   };
 
   useEffect(() => {
@@ -33,6 +50,10 @@ function Editpost() {
       return false;
     }
     if (!description) {
+      toast.error("img is required.");
+      return false;
+    }
+    if (!descriptionmore) {
       toast.error("img is required.");
       return false;
     }
@@ -49,51 +70,64 @@ function Editpost() {
     BookUpdate(id, {
       namebook,
       description,
+      descriptionmore,
     }).then((data) => {
       navigate("/");
-      // return to the projectx page...
     });
   }
   return (
     <>
-      <Title mainText="  עריכת ספר  " subText="" />
-      <div className="d-flex justify-content-center" dir="rtl">
-        <form action="">
-          <div>
-            <label className="ms-2" htmlFor="">
-              שם הספר
-            </label>
-            <input
-              className="shadow-lg p-3 mb-5 bg-body-tertiary rounded border border-4 "
-              type="text"
-              defaultValue={namebook}
-              name="namebook"
-              onChange={(e) => {
-                console.log(namebook);
-                setNamebook(e.target.value);
-              }}
-            />
-          </div>
-          <div className="textare">
-            <label className="ms-2" htmlFor="">
-              תיאור הספר{" "}
-            </label>
-            <textarea
-              className="form-control shadow-lg p-3 mb-5 bg-body-tertiary rounded border border-4 "
-              id="exampleFormControlTextarea1"
-              rows={3}
-              defaultValue={description}
-              name="description"
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-          </div>
-        </form>
-      </div>
-      <div className="text-center mt-5 ">
-        <button onClick={handleClick} className="btn btn-primary fs-4">
-          שלח{" "}
-        </button>
-      </div>
+      <Grid xs={12} md={3}>
+        <Container>
+          <Typography variant="h2" align="center">
+            עריכת ספר
+          </Typography>
+
+          <Stack dir="rtl" width={300} margin="0 auto">
+            {!!namebook && !!description && (
+              <>
+                <TextField
+                  dir="rtl"
+                  id="namebook"
+                  name="namebook"
+                  type="text"
+                  placeholder="שם הספר"
+                  variant="standard"
+                  style={{ textAlign: "right" }}
+                  defaultValue={namebook}
+                  sx={LabelRtl}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <Textarea
+                  style={{ textAlign: "right" }}
+                  minRows={2}
+                  size="lg"
+                  id="description"
+                  name="description"
+                  sx={LabelRtl}
+                  placeholder="תיאור בקצרה "
+                  defaultValue={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <Textarea
+                  style={{ textAlign: "right" }}
+                  minRows={2}
+                  size="lg"
+                  id="descriptionmore"
+                  name="descriptionmore"
+                  sx={LabelRtl}
+                  placeholder="תיאור מלא "
+                  defaultValue={descriptionmore}
+                  onChange={(e) => setDescriptionmore(e.target.value)}
+                />
+                <Button className="fs-3" onClick={handleClick}>
+                  שלח
+                </Button>
+              </>
+            )}
+          </Stack>
+        </Container>
+      </Grid>
     </>
   );
 }
