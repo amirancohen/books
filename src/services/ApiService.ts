@@ -9,7 +9,8 @@ import { Editbook } from "../pages/Editpost";
 
 import { User } from "../types/user";
 
-const serverUrl = "http://localhost:3000";
+// const serverUrl = "http://localhost:3000";
+const serverUrl = "https://squid-app-5s93p.ondigitalocean.app/";
 const usersUrl = `${serverUrl}/users`;
 const bookUrl = `${serverUrl}/books`;
 const recommendationUrl = `${serverUrl}/recommendations`;
@@ -26,6 +27,7 @@ export const login = async (user: {
         credentials: "include",
         body: JSON.stringify(user),
     });
+    console.log(res)
     return res.status === 200;
 };
 
