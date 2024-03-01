@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' });
 const createError = require("http-errors");
 const express = require("express");
 const cors = require("cors");
@@ -5,7 +7,6 @@ const fileUpload = require("express-fileupload");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-
 const usersRoutes = require("./routes/users");
 const booksRoutes = require("./routes/books");
 const recomendationRoutes = require("./routes/recommendations");

@@ -1,4 +1,4 @@
 module.exports = {
-    db_conn: 'mongodb://localhost:27017/einat_editor',
+    db_conn: process.env.MONGO_URI,
     jwt_token: 'myPrivateKey',
 }
