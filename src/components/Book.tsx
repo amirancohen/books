@@ -7,7 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ButtonProps, Grid, Button, Link } from "@mui/material";
+import { ButtonProps, Grid, Button, Link, Box, Menu } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
@@ -51,7 +51,7 @@ export default function RecipeReviewCard({ item }: any) {
             <CardMedia
               component="img"
               // image={`http://localhost:3000/images/${item.image}`}
-              image={`https://squid-app-5s93p.ondigitalocean.app/images/${item.image}`}
+              image={`https://squid-app-5s93p.ondigitalocean.app//images/${item.image}`}
               alt=""
               width={1200}
               height={300}
