@@ -13578,6 +13578,11 @@ react-router@6.21.3:
   dependencies:
     "@remix-run/router" "1.14.2"
 
+react-script@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/react-script/-/react-script-2.0.5.tgz#9dac20f97cff1fb40f5b4084e3f44b82e3001572"
+  integrity sha512-hLFLMFAH3Rr0VJisBz/bPyaJxMEimQGvuVOBXyn3t/nmlbV6mF+nghCPoY1V4dzIi+M1A8iyyXId1cgg8eS6XA==
+
 react-scripts-custom@^0.7.0-beta.2:
   version "0.7.0-beta.2"
   resolved "https://registry.yarnpkg.com/react-scripts-custom/-/react-scripts-custom-0.7.0-beta.2.tgz#eb33c6207592d8c12bf374b051f54e735ad8812c"
