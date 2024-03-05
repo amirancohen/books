@@ -31,7 +31,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3",
+    "react-router-dom": "^6.22.2",
     "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "react-scripts-custom": "^0.7.0-beta.2",
