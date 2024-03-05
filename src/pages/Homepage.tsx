@@ -11,12 +11,12 @@ import AddRecommendation from "../components/addRecommendation";
 
 
 function Homepage() {
-const user = useUserData();
-useEffect(() => {
-  getUserData().then((res) => {
-    user?.setUser(res);
-  });
-}, []);
+// const user = useUserData();
+// useEffect(() => {
+//   getUserData().then((res) => {
+//     user?.setUser(res);
+//   });
+// }, []);
   return (
     <>
       <About />
