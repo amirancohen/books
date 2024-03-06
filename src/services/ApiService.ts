@@ -95,7 +95,7 @@ export const postRecommendation = async (userRecommendation: {
     recommendation: string;
 }): Promise<AddRecomen> => {
     const res = await fetch(`${recommendationUrl}`, {
-        method: "GET",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
