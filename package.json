@@ -72,6 +72,7 @@
   "author": "amiran cohen <amirancohen@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@vercel/node": "^3.0.20"
+    "@vercel/node": "^3.0.20",
+    "parcel": "^2.12.0"
   }
 }
