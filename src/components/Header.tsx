@@ -18,6 +18,7 @@ import { useUserData } from "../context/user";
 import IconButton from "@mui/material/IconButton";
 import {  Stack } from "@mui/material";
 import { logout } from "../services/ApiService";
+import einat from "./pic/einat.jpg";
 
 const NavBar = () => {
   const user = useUserData();
@@ -49,7 +50,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Stack direction="row" spacing={2}>
               <a href="/">
-                <Avatar alt="Einat Zilberman" src="/images/einat.jpg" />
+                <Avatar alt="Einat Zilberman" src={einat} />
               </a>
               <Link
                 style={{ marginRight: 10 }}

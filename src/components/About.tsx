@@ -11,7 +11,8 @@ import {
 import { Image } from "mui-image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-
+import einat from "./pic/einat.jpg";
+import printer from "./pic/printer.jpg";
 
 const About = () => {
   return (
@@ -22,8 +23,8 @@ const About = () => {
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-      <Typography variant="h2" align="center">
-        <Image alt="about" src="/images/printer.jpg" />
+      <Typography variant="h2" align="center" >
+        <Image style={{ width:600 , height:400, textAlign:"center" }} alt="about" src={printer} />
       </Typography>
       <Grid
         container
@@ -63,7 +64,7 @@ const About = () => {
             <Container style={{ textAlign: "center" }}>
               <Image
                 alt="Einat Zilberman"
-                src="/images/einat.jpg"
+                src={einat}
                 style={{
                   borderRadius: "50%",
                   width: 150,
