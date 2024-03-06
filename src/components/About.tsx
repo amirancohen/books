@@ -23,8 +23,8 @@ const About = () => {
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-      <Typography variant="h2" align="center" >
-        <Image style={{ width:600 , height:400, textAlign:"center" }} alt="about" src={printer} />
+      <Typography variant="h2"  style={{ width:500 , height:300, margin:"auto" }}>
+        <Image  alt="about" src={printer} />
       </Typography>
       <Grid
         container
