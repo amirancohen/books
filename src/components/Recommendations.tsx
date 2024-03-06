@@ -14,13 +14,13 @@ export interface AllRecommendations {
 const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
   const [cards, setCards] = useState<Array<AllRecommendations>>([]);
 
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     getAllRecommendations().then((json) => setCards(json));
   }, []);
 
-  const [value, setValue] = React.useState("recents");
+ 
 
 
 
