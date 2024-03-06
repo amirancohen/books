@@ -44,10 +44,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "babel src -d lib",
-    "test": "jest",
-    "eject": "react-scripts eject"
+    "prebuild": "jest"
   },
   "eslintConfig": {
     "extends": [
