@@ -48,12 +48,14 @@ export default function RecipeReviewCard({ item }: any) {
       <Grid container>
         <Grid xs={12} sm={4}>
           <CardMedia
+         
             component="img"
             // image={`http://localhost:3000/images/${item.image}`}
             image={`https://squid-app-5s93p.ondigitalocean.app//images/${item.image}`}
             alt=""
             width={1200}
             height={300}
+            style={{marginTop:10, marginRight:5}}
           />
         </Grid>
         <Grid xs={12} sm={8}>
