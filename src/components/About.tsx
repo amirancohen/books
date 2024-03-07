@@ -6,6 +6,7 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Container,
+  
 } from "@mui/material";
 import { Image } from "mui-image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -15,23 +16,16 @@ import printer from "./pic/printer.jpg";
 
 const About = () => {
   return (
-    <Container >
+    <Container style={{ marginTop: 30 }}>
       <Typography variant="h4" align="center">
         עינת זילברמן
       </Typography>
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-
-      <Grid xs={12} sm={10} md={8} lg={6} >
-        <Typography
-          variant="h2"
-          sx={{width:500 , height:350, margin:"auto",}}
-        >
-          <Image alt="about" src={printer}   position="static" />
-        </Typography>
-      </Grid>
-
+      <Typography variant="h2" align="center" sx={{ textAlign:"center" }}>
+        <Image alt="about" src={printer} />
+      </Typography>
       <Grid
         container
         style={{ marginTop: 60 }}
@@ -39,7 +33,7 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid xs={10} md={8} >
+        <Grid xs={10} md={8}>
           <Stack>
             <Typography variant="h4" align="center">
               אודות
