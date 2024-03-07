@@ -45,6 +45,7 @@ const AddRecommendation = () => {
       recommendation,
     });
     navigate("/");
+    console.log(postRecommendation)
   };
   return (
     <>

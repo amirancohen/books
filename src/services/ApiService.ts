@@ -39,7 +39,7 @@ export const logout = async (): Promise<boolean> => {
 }
 
 export const getUserData = async (): Promise<User> => {
-    const res = await fetch(`${usersUrl}/me`, {
+    const res = await fetch(`${usersUrl}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
