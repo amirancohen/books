@@ -15,21 +15,23 @@ import printer from "./pic/printer.jpg";
 
 const About = () => {
   return (
-    <Container style={{ marginTop: 30 }}>
+    <Container >
       <Typography variant="h4" align="center">
         עינת זילברמן
       </Typography>
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-      <Grid xs={12} sm={8}>
+
+      <Grid xs={12} sm={10} md={8} lg={6} >
         <Typography
           variant="h2"
-          style={{ width: 500, height: 300, margin: "auto" }}
+          sx={{width:500 , height:350, margin:"auto",}}
         >
-          <Image alt="about" src={printer} />
+          <Image alt="about" src={printer}   position="static" />
         </Typography>
       </Grid>
+
       <Grid
         container
         style={{ marginTop: 60 }}
@@ -37,7 +39,7 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid xs={10} md={8}>
+        <Grid xs={10} md={8} >
           <Stack>
             <Typography variant="h4" align="center">
               אודות
