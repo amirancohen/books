@@ -1,6 +1,6 @@
 const { User } = require("../models/User");
 const joi = require("joi");
-// const dayjs = require("dayjs");
+const dayjs = require("dayjs");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const config = require("../config/dev");

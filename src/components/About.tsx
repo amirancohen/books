@@ -6,7 +6,6 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Container,
-  
 } from "@mui/material";
 import { Image } from "mui-image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -23,7 +22,7 @@ const About = () => {
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-      <Typography variant="h2" align="center" sx={{ textAlign:"center" }}>
+      <Typography variant="h2" align="center" sx={{ textAlign: "center" }}>
         <Image alt="about" src={printer} />
       </Typography>
       <Grid
@@ -44,10 +43,13 @@ const About = () => {
 
             <Typography variant="body1" padding={1} fontSize="large">
               שמי עינת זילברמן, עורכת לשון, ספרות ומגיהה. במשך למעלה מ-30 שנים
-              עסקתי בעריכת דין, בוגרת אוניברסיטת תל אביב במשפטים, בשנת 2022
-              עברתי הסבה מקצועית לתחום עריכת לשון וספרות, מתוך אהבה וחיבור למילה
-              הכתובה. למדתי עריכת לשון ב-״מכללת אסיף״ בהצטיינות, עריכת ספרות
-              ותוכן בבית העורכים של לירון פיין.
+              עסקתי בעריכת דין.
+              <br /> בוגרת אוניברסיטת תל אביב במשפטים. <br />
+              בשנת 2022 עברתי הסבה מקצועית לתחום עריכת לשון וספרות, מתוך אהבה
+              וחיבור למילה הכתובה. <br /> למדתי עריכת לשון ב-״מכללת אסיף״
+              וסיימתיי בהצטיינות.
+              <br />
+              למדתי עריכת ספרות ותוכן בבית העורכים של לירון פיין.
             </Typography>
             <Typography
               variant="body1"
@@ -57,8 +59,9 @@ const About = () => {
             >
               כדי שטקסט יצליח להגיע אל ליבו של הקורא ולספר את הסיפור שהכותב מבקש
               לספר, עליו להיות בהיר, קולח, בלי שגיאות ופשוט מבחינה תחבירית. זוהי
-              עבודתו של העורך וזו העבודה שבחרתי לעשות באהבה. מוזמנים ליצור עימי
-              קשר. אפשר לשלוח אליי קטע קצר מן הטקסט ואחזיר לכם דוגמת עריכה (ללא
+              עבודתו של העורך <br />
+              וזו העבודה שבחרתי לעשות באהבה. מוזמנים ליצור עימי קשר. <br />
+              אפשר לשלוח אליי קטע קצר מן הטקסט ואחזיר לכם דוגמת עריכה (ללא
               תשלום).
             </Typography>
             <Container style={{ textAlign: "center" }}>

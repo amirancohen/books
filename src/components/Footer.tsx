@@ -18,7 +18,7 @@ function Footer() {
       <Container maxWidth="sm">
         <Typography variant="body2" color="text.secondary" align="center">
           {"Copyright © "}
-          <Link color="inherit" href="https://your-website.com/">
+          <Link color="inherit" href="https://einatzilbermaneditor.co.il/">
             עינת זילברמן
           </Link>{" "}
           {new Date().getFullYear()}
