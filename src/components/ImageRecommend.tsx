@@ -18,22 +18,22 @@ function ImageRecommend() {
     return ( 
         <>
         <Box sx={{ width: '50%' , margin:'auto' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
+      <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={12}>
           <Item> 
           <Image
                 alt="Einat Zilberman"
                 src={image1}
                 style={{
-                  borderRadius: "50%",
-                  width: 300,
+                 
+                  width: 400,
                   height: 500,
                   margin: "0 auto",
                 }}
               />
           </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <Item><Image
                 alt="Einat Zilberman"
                 src={image2}

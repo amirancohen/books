@@ -21,7 +21,7 @@ const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
 
   return (
     <>
-      <ImageRecommend />
+      
       <Grid container style={{ justifyContent: "center" }} xs={12}>
         <Stack>
           {cards.map((item) => (
