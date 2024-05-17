@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getAllRecommendations } from "../services/ApiService";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import ImageRecommend from "./ImageRecommend";
 
 export interface AllRecommendations {
   _id?: string;
@@ -14,43 +15,38 @@ export interface AllRecommendations {
 const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
   const [cards, setCards] = useState<Array<AllRecommendations>>([]);
 
-
-
   useEffect(() => {
     getAllRecommendations().then((json) => setCards(json));
   }, []);
 
- 
-
-
-
   return (
-    <Grid container style={{ justifyContent:"center"}} xs={12}  >
-      <Stack>
-       
-
-        {cards.map((item) => (
-          <Card
-            key={item._id}
-            variant="soft"
-            color="primary"
-            sx={{
-              boxShadow: 15,
-              margin: 1,
-            }}
-          >
-            <CardContent
+    <>
+      <Grid container style={{ justifyContent: "center" }} xs={12}>
+      <ImageRecommend />
+        <Stack>
+          {cards.map((item) => (
+            <Card
+              key={item._id}
+              variant="soft"
+              color="primary"
               sx={{
                 boxShadow: 15,
+                margin: 1,
               }}
             >
-              <Typography fontSize={20}> {item.name}</Typography>
-              <Typography fontSize={18}> {item.recommendation}</Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </Stack>
-    </Grid>
+              <CardContent
+                sx={{
+                  boxShadow: 15,
+                }}
+              >
+                <Typography fontSize={20}> {item.name}</Typography>
+                <Typography fontSize={18}> {item.recommendation}</Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </Stack>
+      </Grid>
+    </>
   );
 };
 
