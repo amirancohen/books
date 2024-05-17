@@ -18,8 +18,7 @@ function ImageRecommend() {
     return ( 
         <>
         <Box sx={{ width: '50%' , margin:'auto' }}>
-      <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={12}>
+      <Grid container xs={12} sm={8}>
           <Item> 
           <Image
                 alt="Einat Zilberman"
@@ -45,8 +44,6 @@ function ImageRecommend() {
                 }}
               /></Item>
         </Grid>
-       
-      </Grid>
     </Box>
         </>
      );
