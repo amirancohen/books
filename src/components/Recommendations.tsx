@@ -32,6 +32,7 @@ const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
               sx={{
                 boxShadow: 15,
                 margin: 1,
+                marginTop: 3,
               }}
             >
               <CardContent
@@ -40,7 +41,7 @@ const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
                 }}
               >
                 <Typography fontSize={20}> {item.name}</Typography>
-                <Typography fontSize={18}> {item.recommendation}</Typography>
+                <Typography className="lh-1" fontSize={17}> {item.recommendation}</Typography>
               </CardContent>
             </Card>
           ))}
