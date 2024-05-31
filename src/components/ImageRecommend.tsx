@@ -18,12 +18,12 @@ function ImageRecommend() {
   return (
     <>
       <Box >
-        <Grid  xs={12} sm={6} >
+        <Grid  xs={12} sm={8} >
           <Item >
             <Image alt="Einat Zilberman" src={image1} style={{width:'400px', textAlign:'center'}} />
           </Item>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={8}>
           <Item >
             <Image alt="Einat Zilberman" src={image2} style={{width:'400px'}} />
           </Item>

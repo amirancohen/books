@@ -12,6 +12,10 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import einat from "./pic/einat.jpg";
 import printer from "./pic/printer.jpg";
+import Card from "@mui/material/Card";
+
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 
 const About = () => {
   return (
@@ -22,9 +26,13 @@ const About = () => {
       <Typography variant="subtitle1" align="center" fontSize="large">
         עורכת לשון
       </Typography>
-      <Typography variant="h2" align="center" sx={{ textAlign: "center" }}>
-        <Image alt="about" src={printer}  />
-      </Typography>
+      <Grid xs={12} sm={8}>
+        <Typography variant="h2" align="center" sx={{ textAlign: "center" }}>
+          <Card sx={{ maxWidth: 600, margin: "auto" }}>
+            <Image alt="about" src={printer} />
+          </Card>
+        </Typography>
+      </Grid>
       <Grid
         container
         style={{ marginTop: 60 }}
