@@ -67,13 +67,20 @@ const MyWorks = () => {
       <Typography variant="h2" align="center">
         ספרים שערכתי
       </Typography>
-      <Grid container rowSpacing={2} columnSpacing={3} marginTop={3} xs={12} sm={6} lg={6} xl={6} marginX={"auto"}>
+      <Grid
+        container
+        rowSpacing={2}
+        columnSpacing={3}
+        marginTop={3}
+        xs={12}
+        sm={6}
+        marginX={"auto"}
+      >
         {cards.map((book) => (
-          <Grid item key={book._id} >
+          <Grid item key={book._id}>
             <Paper
               sx={{
                 height: "100%",
-                
               }}
             >
               <Book item={book} />

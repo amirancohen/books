@@ -23,7 +23,7 @@ const About = () => {
         עורכת לשון
       </Typography>
       <Typography variant="h2" align="center" sx={{ textAlign: "center" }}>
-        <Image alt="about" src={printer} style={{width:'600px'}} />
+        <Image alt="about" src={printer}  />
       </Typography>
       <Grid
         container
@@ -32,7 +32,7 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid xs={10} md={8}>
+        <Grid xs={12} sm={8} lg={6} xl={6}>
           <Stack>
             <Typography variant="h4" align="center">
               אודות

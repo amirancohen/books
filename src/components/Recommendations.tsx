@@ -22,7 +22,7 @@ const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
   return (
     <>
       
-      <Grid container style={{ justifyContent: "center" }} xs={12}>
+      <Grid container style={{ justifyContent: "center" }} xs={12} sm={8} >
         <Stack>
           {cards.map((item) => (
             <Card
@@ -31,17 +31,21 @@ const Recommendations = ({ _id, name, recommendation }: AllRecommendations) => {
               color="primary"
               sx={{
                 boxShadow: 15,
-                margin: 1,
-                marginTop: 3,
+                margin: 2,
+                marginRight:'50%'
               }}
             >
               <CardContent
+          
                 sx={{
                   boxShadow: 15,
+                  
                 }}
               >
-                <Typography fontSize={20}> {item.name}</Typography>
-                <Typography className="lh-1" fontSize={17}> {item.recommendation}</Typography>
+                <div>
+                <Typography  fontSize={20}> {item.name}</Typography>
+                <Typography  fontSize={17}> {item.recommendation}</Typography>
+                </div>
               </CardContent>
             </Card>
           ))}

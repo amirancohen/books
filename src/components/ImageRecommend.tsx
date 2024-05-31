@@ -17,13 +17,13 @@ const Item = styled(Paper)(({ theme }) => ({
 function ImageRecommend() {
   return (
     <>
-      <Box sx={{ width: "25%", margin: "auto" }}>
-        <Grid container xs={12} sm={8}>
-          <Item style={{ margin:'auto'}} className="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            <Image alt="Einat Zilberman" src={image1} style={{width:'400px'}} className="border border-primary"/>
+      <Box >
+        <Grid  xs={12} sm={6} >
+          <Item >
+            <Image alt="Einat Zilberman" src={image1} style={{width:'400px', textAlign:'center'}} />
           </Item>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={6}>
           <Item >
             <Image alt="Einat Zilberman" src={image2} style={{width:'400px'}} />
           </Item>
